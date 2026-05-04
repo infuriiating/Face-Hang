@@ -84,7 +84,7 @@ jogo_da_forca_V2/
 │   ├── wordBank.js         # Categorias e seleção aleatória de palavras
 │   ├── uiRenderer.js       # Atualizações DOM, desenho na canvas
 │   └── calibration.js      # Sobreposição de calibração
-├── public/
+├── assets/
 │   └── icon.png            # Ícone do FACEHANG
 └── README.md               # Documentação (Inglês)
 ```

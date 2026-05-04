@@ -84,7 +84,7 @@ jogo_da_forca_V2/
 │   ├── wordBank.js         # Word categories and random selection
 │   ├── uiRenderer.js       # DOM updates, canvas hangman drawing, keyboard
 │   └── calibration.js      # Calibration overlay flow
-├── public/
+├── assets/
 │   └── icon.png            # FACEHANG Icon
 └── README.md               # This file
 ```
