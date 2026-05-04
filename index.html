@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A hands-free Hangman game controlled by face gestures using AI-powered Computer Vision. No keyboard or mouse needed.">
+  <title>FACEHANG</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="public/icon.png">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       HEADER — Title + Score
+       ═══════════════════════════════════════════════ -->
+  <header class="app-header">
+    <h1 class="app-title">
+      <img src="public/icon.png" alt="FACEHANG Icon" style="height: 36px; border-radius: 8px;">
+      FACEHANG
+    </h1>
+    <div id="score-display"></div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════════ -->
+  <main class="app-main">
+
+    <!-- ── Category Selection ── -->
+    <section id="category-section" style="display: none;">
+      <h2 class="section-title">Escolha uma Categoria</h2>
+      <p class="section-subtitle">Incline a cabeça para a esquerda/direita para navegar • Abra a boca para selecionar</p>
+      <div id="category-select"></div>
+    </section>
+
+    <!-- ── Game Area ── -->
+    <section id="game-section" style="display: none;">
+      <div class="game-area">
+        <!-- Hangman Drawing -->
+        <div class="hangman-panel">
+          <canvas id="hangman-canvas" width="220" height="220"></canvas>
+          <div id="remaining-guesses"></div>
+        </div>
+
+        <!-- Word Display -->
+        <div class="word-panel">
+          <div id="word-display"></div>
+          <div id="hint-display"></div>
+        </div>
+      </div>
+
+      <!-- Virtual Keyboard -->
+      <div class="keyboard-section">
+        <div id="keyboard"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       WEBCAM PiP (Picture-in-Picture)
+       ═══════════════════════════════════════════════ -->
+  <div class="webcam-pip">
+    <video id="webcam-video" autoplay playsinline muted></video>
+    <canvas id="webcam-overlay"></canvas>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       STATUS BAR
+       ═══════════════════════════════════════════════ -->
+  <footer class="status-bar">
+    <span id="status-text">A carregar...</span>
+    <div id="gesture-debug"></div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════
+       CALIBRATION OVERLAY
+       ═══════════════════════════════════════════════ -->
+  <div id="calibration-overlay">
+    <div class="cal-card">
+      <h2 class="cal-title">Calibração</h2>
+      <div id="cal-status-ring">
+        <span id="cal-step-icon">📸</span>
+      </div>
+      <p id="cal-step-text">A iniciar...</p>
+      <div id="cal-progress-dots"></div>
+      <button id="cal-skip-btn">Saltar Calibração</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       GAME OVER OVERLAY
+       ═══════════════════════════════════════════════ -->
+  <div id="game-over-overlay">
+    <div class="go-card">
+      <h2 class="go-title">Fim do Jogo</h2>
+      <p class="go-subtitle"></p>
+      <p class="go-word"></p>
+      <p class="go-instruction"></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SCRIPTS (ES Modules)
+       ═══════════════════════════════════════════════ -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
